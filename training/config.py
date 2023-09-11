@@ -1,0 +1,12 @@
+NFFT = 1024
+NMELS = 128
+WIDTH = 384
+HEIGHT = 128
+
+ESC_DIR = "./data/ESC-50-master"
+
+MODELS_DIR = "./models"
+
+MIN_SNS = 50
+
+SAMPLE_RATE = 44100
