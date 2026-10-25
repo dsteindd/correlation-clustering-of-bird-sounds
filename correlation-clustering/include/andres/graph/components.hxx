@@ -1,17 +1,17 @@
 #pragma once
-#ifndef ANON_GRAPH_COMPONENTS_HXX
-#define ANON_GRAPH_COMPONENTS_HXX
+#ifndef ANDRES_GRAPH_COMPONENTS_HXX
+#define ANDRES_GRAPH_COMPONENTS_HXX
 
 #include <cstddef>
 #include <vector>
 #include <queue>
 #include <algorithm> // std::fill
 
-#include "anon/partition.hxx"
+#include "andres/partition.hxx"
 
 #include "subgraph.hxx"
 
-namespace anon {
+namespace andres {
 namespace graph {
 
 /// Connected component labeling by breadth-first-search (labels start at 0).
@@ -39,7 +39,7 @@ struct ComponentsByPartition {
         std::size_t build(const Graph&, const SUBGRAPH_MASK&);
     bool areConnected(const std::size_t, const std::size_t) const;
 
-    anon::Partition<std::size_t> partition_;
+    andres::Partition<std::size_t> partition_;
 };
 
 /// Connected component labeling by breadth-first-search (labels start at 0).
@@ -184,6 +184,6 @@ ComponentsByPartition<GRAPH>::areConnected(
 }
 
 } // namespace graph
-} // namespace anon
+} // namespace andres
 
-#endif // #ifndef ANON_GRAPH_COMPONENTS_HXX
+#endif // #ifndef ANDRES_GRAPH_COMPONENTS_HXX

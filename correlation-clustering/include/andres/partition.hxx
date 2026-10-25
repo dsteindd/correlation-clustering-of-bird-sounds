@@ -1,13 +1,13 @@
 #pragma once
-#ifndef ANON_PARTITION_HXX
-#define ANON_PARTITION_HXX
+#ifndef ANDRES_PARTITION_HXX
+#define ANDRES_PARTITION_HXX
 
 #include <cstddef>
 #include <vector>
 #include <map>
 
 /// The public API.
-namespace anon {
+namespace andres {
 
 /// Disjoint set data structure with path compression.
 template<class T = std::size_t>
@@ -226,6 +226,6 @@ Partition<T>::elementLabeling(
     }
 }
 
-} // namespace anon
+} // namespace andres
 
-#endif // #ifndef ANON_PARTITION_HXX
+#endif // #ifndef ANDRES_PARTITION_HXX

@@ -1,6 +1,6 @@
 #pragma once
-#ifndef ANON_GRAPH_MULTICUT_GREEDY_ADDITIVE_HXX
-#define ANON_GRAPH_MULTICUT_GREEDY_ADDITIVE_HXX
+#ifndef ANDRES_GRAPH_MULTICUT_GREEDY_ADDITIVE_HXX
+#define ANDRES_GRAPH_MULTICUT_GREEDY_ADDITIVE_HXX
 
 #include <cstddef>
 #include <iterator>
@@ -10,10 +10,10 @@
 #include <queue>
 #include <set>
 
-#include "anon/partition.hxx"
+#include "andres/partition.hxx"
 
 
-namespace anon {
+namespace andres {
 namespace graph {
 namespace multicut {
 
@@ -112,7 +112,7 @@ void greedyAdditiveEdgeContraction(
 
     std::cout << "Greedy Additive done init..." << std::endl;
 
-    anon::Partition<size_t> partition(graph.numberOfVertices());
+    andres::Partition<size_t> partition(graph.numberOfVertices());
 
     while (!Q.empty())
     {
@@ -318,7 +318,7 @@ void greedyAdditiveEdgeContraction(
 
         std::cout << "Greedy Additive done init..." << std::endl;
 
-        anon::Partition<size_t> partition(graph.numberOfVertices());
+        andres::Partition<size_t> partition(graph.numberOfVertices());
 
         while (!Q.empty())
         {
@@ -361,6 +361,6 @@ void greedyAdditiveEdgeContraction(
 
 } // namespace multicut
 } // namespace graph
-} // namespace anon
+} // namespace andres
 
-#endif // #ifndef ANON_GRAPH_MULTICUT_GREEDY_ADDITIVE_HXX
+#endif // #ifndef ANDRES_GRAPH_MULTICUT_GREEDY_ADDITIVE_HXX

@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+type: software
+title: "Correlation Clustering of Bird Sounds"
+abstract: >-
+  Code for the paper "Correlation Clustering of Bird Sounds" (GCPR 2023): training of
+  siamese and classification networks on spectrograms of xeno-canto recordings, and
+  correlation clustering of bird sound recordings by greedy additive edge contraction
+  and Kernighan-Lin, and the experiments of the paper.
+authors:
+  - family-names: Stein
+    given-names: David
+    affiliation: "Faculty of Computer Science, TU Dresden, Germany"
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/dsteindd/correlation-clustering-of-bird-sounds"
+preferred-citation:
+  type: conference-paper
+  title: "Correlation Clustering of Bird Sounds"
+  authors:
+    - family-names: Stein
+      given-names: David
+    - family-names: Andres
+      given-names: Bjoern
+  collection-title: "German Conference on Pattern Recognition (GCPR)"
+  year: 2023
+  doi: 10.1007/978-3-031-54605-1_33

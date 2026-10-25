@@ -1,6 +1,6 @@
 #pragma once
-#ifndef ANON_GRAPH_COMPLETE_GRAPH_HXX
-#define ANON_GRAPH_COMPLETE_GRAPH_HXX
+#ifndef ANDRES_GRAPH_COMPLETE_GRAPH_HXX
+#define ANDRES_GRAPH_COMPLETE_GRAPH_HXX
 
 #include <cassert>
 #include <cstddef>
@@ -10,7 +10,7 @@
 #include "adjacency.hxx"
 #include "visitor.hxx"
 
-namespace anon {
+namespace andres {
 namespace graph {
 
 /// Complete graph.
@@ -995,6 +995,6 @@ CompleteGraph<VISITOR>::EdgeIterator::operator[](
 // \endcond
 
 } // namespace graph
-} // namespace anon
+} // namespace andres
 
-#endif // #ifndef ANON_GRAPH_COMPLETE_GRAPH_HXX
+#endif // #ifndef ANDRES_GRAPH_COMPLETE_GRAPH_HXX

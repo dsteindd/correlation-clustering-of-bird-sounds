@@ -4,16 +4,16 @@
 #include <sstream>
 #include <iostream>
 
-#include <anon/graph/complete-graph.hxx>
-#include <anon/graph/multicut/kernighan-lin.hxx>
-#include <anon/graph/components.hxx>
-#include <anon/graph/partition-comparison.hxx>
+#include <andres/graph/complete-graph.hxx>
+#include <andres/graph/multicut/kernighan-lin.hxx>
+#include <andres/graph/components.hxx>
+#include <andres/graph/partition-comparison.hxx>
 
 
 int main() {
-    typedef anon::graph::CompleteGraph<> Graph;
-    typedef anon::RandError<double> RandError;
-    typedef anon::VariationOfInformation<double> VI;
+    typedef andres::graph::CompleteGraph<> Graph;
+    typedef andres::RandError<double> RandError;
+    typedef andres::VariationOfInformation<double> VI;
 
     std::string filePath = "../../training/models/similarity/split-3600/analysis/siamese_outputs_unseen_only.csv";
 

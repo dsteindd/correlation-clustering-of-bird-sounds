@@ -1,12 +1,12 @@
 #pragma once
-#ifndef ANON_GRAPH_CUT_VERTICES_HXX
-#define ANON_GRAPH_CUT_VERTICES_HXX
+#ifndef ANDRES_GRAPH_CUT_VERTICES_HXX
+#define ANDRES_GRAPH_CUT_VERTICES_HXX
 
 #include <stack>
 #include <vector>
 #include "subgraph.hxx"
 
-namespace anon {
+namespace andres {
 namespace graph {
 
 template<class GRAPH>

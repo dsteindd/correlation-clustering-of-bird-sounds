@@ -1,7 +1,8 @@
 #pragma once
-#ifndef ANON_GRAPH_MULTICUT_KERNIGHAN_LIN_HXX
-#define ANON_GRAPH_MULTICUT_KERNIGHAN_LIN_HXX
+#ifndef ANDRES_GRAPH_MULTICUT_KERNIGHAN_LIN_HXX
+#define ANDRES_GRAPH_MULTICUT_KERNIGHAN_LIN_HXX
 
+#include <algorithm>
 #include <iomanip>
 #include <stack>
 #include <stdexcept>
@@ -12,7 +13,7 @@
 
 
 
-namespace anon {
+namespace andres {
 namespace graph {
 namespace multicut {
 
@@ -823,6 +824,6 @@ void kernighanLin(const CompleteGraph<GraphVisitor>& graph, const ECA& edge_cost
 
 } // of multicut
 } // of graph
-} // of anon
+} // of andres
 
 #endif

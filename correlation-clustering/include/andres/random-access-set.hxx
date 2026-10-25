@@ -1,6 +1,6 @@
 #pragma once
-#ifndef ANON_RANDOM_ACCESS_SET_HXX
-#define ANON_RANDOM_ACCESS_SET_HXX
+#ifndef ANDRES_RANDOM_ACCESS_SET_HXX
+#define ANDRES_RANDOM_ACCESS_SET_HXX
 
 #include <cstddef>
 #include <cstring> // std::memmove
@@ -9,7 +9,7 @@
 #include <functional> // std::greater
 #include <utility> // std::make_pair
 
-namespace anon {
+namespace andres {
 
 // STL-compliant container compatible with std::set but with linear time insert and constant time random access.
 //
@@ -406,6 +406,6 @@ RandomAccessSet<Key, Comparison, Allocator>::get_allocator() const {
     return vector_.get_allocator();
 }
 
-} // namespace anon
+} // namespace andres
 
-#endif // #ifndef ANON_RANDOM_ACCESS_SET_HXX
+#endif // #ifndef ANDRES_RANDOM_ACCESS_SET_HXX

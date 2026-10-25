@@ -1,11 +1,11 @@
 #pragma once
-#ifndef ANON_GRAPH_VISITOR_HXX
-#define ANON_GRAPH_VISITOR_HXX
+#ifndef ANDRES_GRAPH_VISITOR_HXX
+#define ANDRES_GRAPH_VISITOR_HXX
 
 #include <cstddef>
 #include <iostream>
 
-namespace anon {
+namespace andres {
 namespace graph {
 
 /// Visitors can be used to follow the indices of vertices and edges.
@@ -52,6 +52,6 @@ struct VerboseGraphVisitor {
 };
 
 } // namespace graph
-} // namespace anon
+} // namespace andres
 
-#endif // #ifndef ANON_GRAPH_VISITOR_HXX
+#endif // #ifndef ANDRES_GRAPH_VISITOR_HXX

@@ -1,8 +1,8 @@
 #pragma once
-#ifndef ANON_GRAPH_SUBGRAPH_HXX
-#define ANON_GRAPH_SUBGRAPH_HXX
+#ifndef ANDRES_GRAPH_SUBGRAPH_HXX
+#define ANDRES_GRAPH_SUBGRAPH_HXX
 
-namespace anon {
+namespace andres {
 namespace graph {
 
 /// An entire graph.
@@ -17,6 +17,6 @@ struct DefaultSubgraphMask {
 };
 
 } // namespace graph
-} // namespace anon
+} // namespace andres
 
-#endif // #ifndef ANON_GRAPH_SUBGRAPH_HXX
+#endif // #ifndef ANDRES_GRAPH_SUBGRAPH_HXX

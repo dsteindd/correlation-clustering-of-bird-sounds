@@ -7,12 +7,28 @@ from typing import Dict, List, Union
 import wget
 import requests
 
+# xeno-canto API v3 requires a personal API key, see https://xeno-canto.org/account
+API_KEY_ENV = "XENO_CANTO_API_KEY"
+
 
 def get_generic_url(search="", area: Union[str, None] = None, quality: Union[str, None] = None, page: int = 1):
     query_string = f"query={search}" + (f"+area:{area}" if area is not None else "") + (
         f"+q:{quality}" if quality is not None else "")
 
-    return f'https://www.xeno-canto.org/api/2/recordings?{query_string}&page={page}'
+    return f'https://xeno-canto.org/api/3/recordings?{query_string}&page={page}'
+
+
+def query_api(url: str) -> Dict:
+    api_key = os.environ.get(API_KEY_ENV)
+    if not api_key:
+        raise Exception(f"Set the environment variable {API_KEY_ENV} to your xeno-canto API key")
+
+    # the key is passed separately so that it never appears in printed URLs
+    response = requests.get(url, params={"key": api_key}).json()
+    if "error" in response:
+        raise Exception(f"xeno-canto API error: {response['message']}")
+
+    return response
 
 
 def get_duration_from_minute_str(length: str):
@@ -38,20 +54,20 @@ def process_downloads_for_page(config: Dict):
 
     url = get_generic_url(search=search, page=page, area=area, quality=quality)
 
-    response = requests.get(url).json()
+    response = query_api(url)
 
     recordings = response["recordings"]
 
     metadata = []
 
     for recording in recordings:
-        recording = recording["id"]
+        recording_id = recording["id"]
         metadata.append({
-            "id": recording,
+            "id": recording_id,
             "gen": recording["gen"],
             "sp": recording["sp"],
             "lat": recording["lat"],
-            "lng": recording["lng"],
+            "lng": recording["lon"],
             "type": recording["type"],
             "quality": recording["q"],
             "cnt": recording["cnt"],
@@ -80,12 +96,12 @@ def process_downloads_for_page(config: Dict):
         if not os.path.exists(base_path):
             os.makedirs(base_path)
 
-        if os.path.exists(base_path + "/" + recording + ".mp3"):
+        if os.path.exists(base_path + "/" + recording_id + ".mp3"):
             continue
 
         download_url = recording["file"]
-        if download_url != '':
-            wget.download(download_url, out=os.path.join(base_path, f"{recording}.mp3"))
+        if download_url:
+            wget.download(download_url, out=os.path.join(base_path, f"{recording_id}.mp3"))
 
     print(f"Finished downloading page {page}")
 
@@ -118,7 +134,7 @@ def process_downloads_with_keyword(
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
 
-    response = requests.get(get_generic_url(search=search, quality=quality, area=area)).json()
+    response = query_api(get_generic_url(search=search, quality=quality, area=area))
     page_num = response["numPages"]
 
     print(f"Downloading {page_num} pages worth of data")
@@ -192,7 +208,7 @@ def process_metadata_download_with_keyword(
         quality: Union[str, None],
         fn: str = "metadata.csv"
 ):
-    response = requests.get(get_generic_url(search=search, quality=quality, area=area)).json()
+    response = query_api(get_generic_url(search=search, quality=quality, area=area))
     page_num = response["numPages"]
 
     metadates = []
@@ -200,7 +216,7 @@ def process_metadata_download_with_keyword(
         url = get_generic_url(search=search, quality=quality, area=area, page=page)
         print(f"Calling URL: {url}")
 
-        response = requests.get(url).json()
+        response = query_api(url)
 
         recordings = response["recordings"]
 
@@ -210,7 +226,7 @@ def process_metadata_download_with_keyword(
                 "gen": recording["gen"],
                 "sp": recording["sp"],
                 "lat": recording["lat"],
-                "lng": recording["lng"],
+                "lng": recording["lon"],
                 "type": recording["type"],
                 "sex": recording["sex"],
                 "license": recording["lic"],

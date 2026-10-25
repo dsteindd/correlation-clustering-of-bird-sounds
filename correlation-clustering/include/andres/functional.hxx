@@ -1,12 +1,12 @@
 #pragma once
-#ifndef ANON_FUNCTIONAL_HXX
-#define ANON_FUNCTIONAL_HXX
+#ifndef ANDRES_FUNCTIONAL_HXX
+#define ANDRES_FUNCTIONAL_HXX
 
 #include <cassert>
 #include <cmath>
 #include <stdexcept>
 
-namespace anon {
+namespace andres {
 
 template<typename T>
 struct Identity {
@@ -79,6 +79,6 @@ struct ProbabilityToLogit {
     }
 };
 
-} // namespace anon
+} // namespace andres
 
-#endif // #ifndef ANON_FUNCTIONAL_HXX
+#endif // #ifndef ANDRES_FUNCTIONAL_HXX

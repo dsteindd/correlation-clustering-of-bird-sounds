@@ -4,13 +4,13 @@
 #include <sstream>
 #include <iostream>
 
-#include <anon/graph/complete-graph.hxx>
-#include <anon/graph/partition-comparison.hxx>
+#include <andres/graph/complete-graph.hxx>
+#include <andres/graph/partition-comparison.hxx>
 
 int main() {
-    typedef anon::graph::CompleteGraph<> Graph;
-    typedef anon::RandError<double> RandError;
-    typedef anon::VariationOfInformation<double> VI;
+    typedef andres::graph::CompleteGraph<> Graph;
+    typedef andres::RandError<double> RandError;
+    typedef andres::VariationOfInformation<double> VI;
 
     std::string filePath = "../../training/models/similarity/split-3600/analysis/classifier_outputs_test_all.csv";
 

@@ -1,0 +1,33 @@
+{
+  "title": "Correlation Clustering of Bird Sounds",
+  "upload_type": "software",
+  "description": "<p>Code for the paper \"Correlation Clustering of Bird Sounds\" by David Stein and Bjoern Andres (GCPR 2023): training of siamese and classification networks on spectrograms of xeno-canto recordings, and correlation clustering of bird sound recordings by greedy additive edge contraction and Kernighan-Lin, and the experiments of the paper.</p>",
+  "creators": [
+    {
+      "name": "Stein, David",
+      "affiliation": "Faculty of Computer Science, TU Dresden, Germany"
+    }
+  ],
+  "license": "mit",
+  "access_right": "open",
+  "keywords": [
+    "correlation clustering",
+    "bird sounds",
+    "bioacoustics",
+    "siamese networks"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.1007/978-3-031-54605-1_33",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-conferencepaper",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "arXiv:2306.09906",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint",
+      "scheme": "arxiv"
+    }
+  ]
+}

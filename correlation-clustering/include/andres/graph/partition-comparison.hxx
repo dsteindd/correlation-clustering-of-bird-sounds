@@ -1,6 +1,6 @@
 #pragma once
-#ifndef ANON_PARTITION_COMPARISON_HXX
-#define ANON_PARTITION_COMPARISON_HXX
+#ifndef ANDRES_PARTITION_COMPARISON_HXX
+#define ANDRES_PARTITION_COMPARISON_HXX
 
 #include <map>
 #include <utility> // pair
@@ -9,7 +9,7 @@
 #include <stdexcept> // runtime_error
 
 
-namespace anon {
+namespace andres {
 
 template<class T = double>
 class RandError {
@@ -245,6 +245,6 @@ private:
     value_type recall_;
 };
 
-} // namespace anon
+} // namespace andres
 
-#endif // #ifndef ANON_PARTITION_COMPARISON_HXX
+#endif // #ifndef ANDRES_PARTITION_COMPARISON_HXX

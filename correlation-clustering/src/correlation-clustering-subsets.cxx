@@ -5,21 +5,21 @@
 #include <sstream>
 #include <iostream>
 
-#include <anon/graph/complete-graph.hxx>
-#include <anon/graph/multicut/greedy-additive.hxx>
-#include <anon/graph/multicut/kernighan-lin.hxx>
-#include <anon/graph/partition-comparison.hxx>
-#include <anon/graph/multicut/edge-label-mask.hxx>
-#include <anon/graph/components.hxx>
+#include <andres/graph/complete-graph.hxx>
+#include <andres/graph/multicut/greedy-additive.hxx>
+#include <andres/graph/multicut/kernighan-lin.hxx>
+#include <andres/graph/partition-comparison.hxx>
+#include <andres/graph/multicut/edge-label-mask.hxx>
+#include <andres/graph/components.hxx>
 
 template<class T>
-using CutSolutionMask = anon::graph::multicut::CutSolutionMask<T>;
+using CutSolutionMask = andres::graph::multicut::CutSolutionMask<T>;
 
 
 int main() {
-    typedef anon::graph::CompleteGraph<> Graph;
-    typedef anon::RandError<double> RandError;
-    typedef anon::VariationOfInformation<double> VI;
+    typedef andres::graph::CompleteGraph<> Graph;
+    typedef andres::RandError<double> RandError;
+    typedef andres::VariationOfInformation<double> VI;
 
     std::string const filePath = "../../training/models/similarity/split-3600/analysis/siamese_outputs_test_set_only.csv";
     std::string const classesFilePath = "../../training/models/similarity/split-3600/analysis/siamese_outputs_test_set_only_classes.csv";
@@ -302,7 +302,7 @@ int main() {
 //    size_t gt = groundTruths[i];
 
     CutSolutionMask<size_t> truthMask(truePartition);
-    anon::graph::ComponentsBySearch<Graph> componentsBySearch;
+    andres::graph::ComponentsBySearch<Graph> componentsBySearch;
     componentsBySearch.build(graph, truthMask);
 
     std::vector<size_t> truthLabels = componentsBySearch.labels_;
@@ -349,14 +349,14 @@ int main() {
     std::vector<std::size_t> edgeLabels(graph.numberOfEdges(), 1);
 
     std::cout << "Applying Additive Edge Contraction..." << std::endl;
-    anon::graph::multicut::greedyAdditiveEdgeContractionCompleteGraph(
+    andres::graph::multicut::greedyAdditiveEdgeContractionCompleteGraph(
             graph,
             edgeCosts,
             edgeLabels
     );
 
     std::cout << "Applying Kernighan Lin..." << std::endl;
-    anon::graph::multicut::kernighanLin(
+    andres::graph::multicut::kernighanLin(
             graph,
             edgeCosts,
             edgeLabels,

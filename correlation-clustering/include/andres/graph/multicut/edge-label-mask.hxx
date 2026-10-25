@@ -1,10 +1,10 @@
-#ifndef ANON_MULTICUT_EDGELABELMASK_HXX
-#define ANON_MULTICUT_EDGELABELMASK_HXX
+#ifndef ANDRES_MULTICUT_EDGELABELMASK_HXX
+#define ANDRES_MULTICUT_EDGELABELMASK_HXX
 
 #include "vector"
 
 
-namespace anon{
+namespace andres{
     namespace graph {
         namespace multicut {
 
@@ -40,4 +40,4 @@ namespace anon{
     }
 }
 
-#endif //ANON_MULTICUT_EDGELABELMASK_HXX
+#endif //ANDRES_MULTICUT_EDGELABELMASK_HXX

@@ -1,8 +1,8 @@
 #pragma once
-#ifndef ANON_GRAPH_ADJACENCY_HXX
-#define ANON_GRAPH_ADJACENCY_HXX
+#ifndef ANDRES_GRAPH_ADJACENCY_HXX
+#define ANDRES_GRAPH_ADJACENCY_HXX
 
-namespace anon {
+namespace andres {
     namespace graph {
 
         /// The adjacency of a vertex consists of a vertex and a connecting edge.
@@ -169,6 +169,6 @@ namespace anon {
         }
 
     } // namespace graph
-} // namespace anon
+} // namespace andres
 
-#endif // #ifndef ANON_GRAPH_ADJACENCY_HXX
+#endif // #ifndef ANDRES_GRAPH_ADJACENCY_HXX
