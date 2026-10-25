@@ -12,6 +12,7 @@ authors:
     given-names: David
     affiliation: "Faculty of Computer Science, TU Dresden, Germany"
 version: 1.0.0
+doi: 10.5281/zenodo.23644014
 license: MIT
 repository-code: "https://github.com/dsteindd/correlation-clustering-of-bird-sounds"
 preferred-citation:

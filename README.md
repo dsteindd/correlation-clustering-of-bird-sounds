@@ -1,5 +1,7 @@
 # Correlation Clustering of Bird Sounds
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23644014.svg)](https://doi.org/10.5281/zenodo.23644014)
+
 This repository contains the code used for the paper
 [Correlation Clustering of Bird Sounds](https://doi.org/10.1007/978-3-031-54605-1_33)
 (GCPR 2023, preprint: [arXiv:2306.09906](https://arxiv.org/abs/2306.09906)).
